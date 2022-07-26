@@ -13,10 +13,16 @@ public final class PeerSingleton {
         hostNames[4] = "192.168.2.14";
     }
 
-    public PeerSingleton() {
+    private PeerSingleton() {
     }
 
     public String[] getHostNames() {
         return hostNames;
+    }
+    
+    private  static final PeerSingleton instance = new PeerSingleton();
+    
+    public static PeerSingleton getInstance(){
+        return instance;
     }
 }
