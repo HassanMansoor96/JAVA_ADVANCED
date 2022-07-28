@@ -46,21 +46,22 @@ public class ShoppingCart implements Serializable {
         return items;
     }
 
+    // This method is only called during serialization
+    private void writeObject(ObjectOutputStream oos) throws IOException {
+        oos.defaultWriteObject();
+        oos.writeObject(new Date());
+    }
+
     // This method is only called during deserialization
     private void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
         ois.defaultReadObject();
         // Recalculate the total if the cart was deserialized
         if (cartTotal == 0 && (items.size() > 0)) {
-            for (Item item : items) 
+            for (Item item : items) {
                 cartTotal += item.getCost();
+            }
         }
-        Date date = (Date)ois.readObject();
-        System.out.println ("Restored Shopping Cart from: " + DateFormat.getDateInstance().format(date));
-    }
-
-    // This method is only called during serialization
-    private void writeObject(ObjectOutputStream oos) throws IOException {
-        oos.defaultWriteObject();
-        oos.writeObject(new Date());
+        Date date = (Date) ois.readObject();
+        System.out.println("Restored Shopping Cart from: " + DateFormat.getDateInstance().format(date));
     }
 }
