@@ -27,7 +27,7 @@ public class League {
             int[][] scoreBoard = new int[data][5];
             for (int i = 0; i < data - 1; i++) {
                 for (int j = i + 1; j < data; j++) {
-                    System.out.print(teamList[i] + " VS " + teamList[j] + " : ");
+                    System.out.print(teamList[i] + " VERSUS " + teamList[j] + " : ");
                     String score = input.readLine();
                     List<String> scoreList = new ArrayList<String>(Arrays.asList(score.split(" ")));
                     scoreList.removeIf(s -> s.equals(""));
