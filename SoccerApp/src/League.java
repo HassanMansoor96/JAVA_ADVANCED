@@ -61,4 +61,7 @@ public class League {
             System.out.println("Error");
         }
     }
+
+
+    // need to get final table to display from highest tp lowest points
 }
