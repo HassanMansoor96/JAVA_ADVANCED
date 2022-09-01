@@ -31,7 +31,7 @@ public class SoccerLeagueApp {
                 .forEach(e -> System.out.println(e + " " + scoreBoard.get(e)));
     }
 
-    private static BufferedReader getReader(String name) //→19
+    private static BufferedReader getReader(String name)
     {
         BufferedReader in = null;
         try {
@@ -61,7 +61,19 @@ public class SoccerLeagueApp {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
+//if (teamScore1 > teamScore2) {
+//
+//                scoreboard.put(team1, scoreboard.getOrDefault(team1, leagueTotal) + 3);
+//
+//            } else if (teamScore1 < teamScore2) {
+//
+//
+//                scoreboard.put(team2, scoreboard.getOrDefault(team2, leagueTotal) + 3);
+//            } else { // draw
+//
+//                scoreboard.put(team1, scoreboard.getOrDefault(team1, leagueTotal) + 1);
+//                scoreboard.put(team2, scoreboard.getOrDefault(team2, leagueTotal) + 1);
+//            }
         if (line == null || line.equals(""))
             return null;
         else {
